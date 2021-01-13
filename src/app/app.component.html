@@ -1,0 +1,19 @@
+<div class="container">
+  <div class="row">
+    <div class="col-12 col-md-10 col-lg-8 offset-sm-1 offset-md-2">
+      <ul class="list-group">
+        <li
+          class="list-group-item"
+          *ngFor="let server of servers"
+          [ngClass]="getStatusClasses(server)"
+        >
+          <span class="badge">
+            {{ server.status }}
+          </span>
+          <strong>{{ server.name | shorten:2}}</strong> | {{ server.instanceType }} |
+          {{ server.started | date: 'medium' }}
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
